@@ -16,5 +16,7 @@ class BaseServiceProvider extends ServiceProvider
 
         // 注册视图
         $this->loadViewsFrom(base_path('extends/views'), 'extends');
+
+        setting()->put('app-custom-head', '<link rel="stylesheet" href="/custom.css">');
     }
 }
