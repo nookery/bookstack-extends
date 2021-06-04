@@ -17,6 +17,16 @@ class BaseServiceProvider extends ServiceProvider
         // 注册视图
         $this->loadViewsFrom(base_path('extends/views'), 'extends');
 
-        setting()->put('app-custom-head', '<link rel="stylesheet" href="/custom.css">');
+        // 加载自定义CSS
+        $appCustomHeadSetting = setting()->get('app-custom-head');
+        if (file_exists(public_path('custom.css')) && !strstr($appCustomHeadSetting, 'custom.css')) {
+            setting()->put('app-custom-head', $appCustomHeadSetting.PHP_EOL.'<link rel="stylesheet" href="/custom.css">');
+        }
+        
+        // 加载自定义JS
+        $appCustomHeadSetting = setting()->get('app-custom-head');
+        if (file_exists(public_path('custom.js')) && !strstr($appCustomHeadSetting, 'custom.js')) {
+            setting()->put('app-custom-head', $appCustomHeadSetting.PHP_EOL.'<script src="/custom.js"></script>');
+        }
     }
 }
