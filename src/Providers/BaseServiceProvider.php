@@ -20,7 +20,7 @@ class BaseServiceProvider extends ServiceProvider
         $setting = setting()->get('app-custom-head');
         $settingChanged = false;
         $cssPath = public_path('custom.css');
-        $jsPath = public_path('custom.js')
+        $jsPath = public_path('custom.js');
 
         // 加载自定义CSS
         $cssSeting = '<link rel="stylesheet" href="/custom.css">';
