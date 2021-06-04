@@ -1,34 +1,24 @@
-Laravel Hammer 🔨
+Bookstack Extends
 ============
 
 ## 介绍
 
-Laravel 的 Artisan 命令扩展包，增加清理缓存、刷新应用等功能。
+扩展Bookstack，实现增加自定义路由、增加自定义页面等功能。
 
 ## 安装
 
 ```shell
-composer require nookery/laravel-hammer --dev
+composer require nookery/bookstack-extends
 ```
 
 ## 使用
-```shell
-php artisan ping
 
-# 输出
-pang
+要加载的路由存储在`base_path/extends/route.php`文件中，即可实现自定义路由；
+要自定义的视图文件存储在`base_path/extends/views/`文件夹中。
+
+假设需要增加`about页面`，参考代码：
+
+```php
+Route::view('/about', 'extends::about')->name('about');
 ```
 
-可用的命令：
-
-| 命令         | 用途|
-|  ----       | ---- |
-| check       | 检查代码、生成IDE辅助文件、运行单元测试| 
-| clear       | 清理一切缓存 |
-| fix         | 检查和修正代码 |
-| foo         | 输出：bar| 
-| fresh       | 清理缓存，重装依赖，刷新应用|
-| ide         | 生成IDE辅助文件|
-| make:database {name}         | 新建数据库|
-| ping        | 输出：pang| 
-| version     | 输出重要组件的版本号| 
