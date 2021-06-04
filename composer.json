@@ -1,0 +1,37 @@
+{
+	"name": "nookery/bookstack-extends",
+	"description": "扩展Bookstack，实现更多自定义功能",
+	"license": "MIT",
+	"homepage": "https://github.com/nookery/bookstack-extends",
+	"keywords": [
+		"laravel",
+		"bookstack",
+		"extends"
+	],
+	"authors": [
+		{
+			"name": "nookery",
+			"email": "nookery@outlook.com"
+		}
+	],
+	"require": {
+		"php": "^7.3|^8.0"
+	},
+	"require-dev": {},
+	"autoload": {
+		"psr-4": {
+			"Nookery\\BootstackExtends\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"classmap": []
+	},
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Nookery\\BootstackExtends\\Providers\\BaseServiceProvider"
+			]
+		}
+	}
+}
