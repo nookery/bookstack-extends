@@ -43,7 +43,7 @@ class BaseServiceProvider extends ServiceProvider
         }
 
         // 如果custom.js文件不存在，删除设置
-        if (!file_exists(jspath) && strstr($setting, 'custom.js')) {
+        if (!file_exists($jsPath) && strstr($setting, 'custom.js')) {
             $setting = str_replace($jsSeting, '', $setting);
             $settingChanged = true;
         }
