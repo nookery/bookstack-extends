@@ -44,7 +44,7 @@ class BaseServiceProvider extends ServiceProvider
         // 加载自定义favicon.ico
         $faviconSetting = '<link rel="shortcut icon" href="'.$faviconLink.'"/>';
         if (file_exists($faviconPath) && !strstr($setting, $faviconLink)) {
-            $setting = $setting.PHP_EOL.$faviconLink;
+            $setting = $setting.PHP_EOL.$faviconSetting;
             $settingChanged = true;
         }
 
